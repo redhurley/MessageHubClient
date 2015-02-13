@@ -14,6 +14,8 @@
 		F8D3BE3D1A8BE3E400C9F26C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8D3BE3C1A8BE3E400C9F26C /* Images.xcassets */; };
 		F8D3BE401A8BE3E400C9F26C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8D3BE3E1A8BE3E400C9F26C /* LaunchScreen.xib */; };
 		F8D3BE4C1A8BE3E400C9F26C /* MessageHubClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D3BE4B1A8BE3E400C9F26C /* MessageHubClientTests.swift */; };
+		F8D3BEBE1A8E83C600C9F26C /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D3BEBD1A8E83C600C9F26C /* Message.swift */; };
+		F8D3BEC01A8EAF4F00C9F26C /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D3BEBF1A8EAF4F00C9F26C /* MessageTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		F8D3BE451A8BE3E400C9F26C /* MessageHubClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MessageHubClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8D3BE4A1A8BE3E400C9F26C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8D3BE4B1A8BE3E400C9F26C /* MessageHubClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageHubClientTests.swift; sourceTree = "<group>"; };
+		F8D3BEBD1A8E83C600C9F26C /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		F8D3BEBF1A8EAF4F00C9F26C /* MessageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +86,9 @@
 				F8D3BE331A8BE3E400C9F26C /* AppDelegate.swift */,
 				F8D3BE351A8BE3E400C9F26C /* MasterViewController.swift */,
 				F8D3BE371A8BE3E400C9F26C /* DetailViewController.swift */,
+				F8D3BEBD1A8E83C600C9F26C /* Message.swift */,
 				F8D3BE391A8BE3E400C9F26C /* Main.storyboard */,
+				F8D3BEBF1A8EAF4F00C9F26C /* MessageTableViewCell.swift */,
 				F8D3BE3C1A8BE3E400C9F26C /* Images.xcassets */,
 				F8D3BE3E1A8BE3E400C9F26C /* LaunchScreen.xib */,
 				F8D3BE311A8BE3E300C9F26C /* Supporting Files */,
@@ -216,7 +222,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8D3BE381A8BE3E400C9F26C /* DetailViewController.swift in Sources */,
+				F8D3BEBE1A8E83C600C9F26C /* Message.swift in Sources */,
 				F8D3BE361A8BE3E400C9F26C /* MasterViewController.swift in Sources */,
+				F8D3BEC01A8EAF4F00C9F26C /* MessageTableViewCell.swift in Sources */,
 				F8D3BE341A8BE3E400C9F26C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,6 +417,7 @@
 				F8D3BE511A8BE3E400C9F26C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F8D3BE521A8BE3E400C9F26C /* Build configuration list for PBXNativeTarget "MessageHubClientTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +426,7 @@
 				F8D3BE541A8BE3E400C9F26C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
