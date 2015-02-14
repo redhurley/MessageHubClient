@@ -18,6 +18,8 @@ class DetailViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        getMessages()
     }
     
     // MARK: - Table View
@@ -45,6 +47,57 @@ class DetailViewController: UITableViewController {
             tableView.reloadData()
         }
     }
-
+    
+    // MARK: - Networking
+    
+    func alertWithError(error : NSError) {
+        let alertController = UIAlertController(
+            title: "Error",
+            message: error.description,
+            preferredStyle: UIAlertControllerStyle.Alert
+        )
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    func messagesFromNetworkResponseData(responseData : NSData) -> Array<Message>? {
+        var serializationError : NSError?
+        let messageAPIDictionaries = NSJSONSerialization.JSONObjectWithData(
+            responseData,
+            options: nil,
+            error: &serializationError
+            ) as Array<Dictionary<String, String>>
+        
+        if let serializationError = serializationError {
+            alertWithError(serializationError)
+            return nil
+        }
+        
+        var messages = messageAPIDictionaries.map({ (messageAPIDictionary) -> Message in
+            let messageText = messageAPIDictionary["message_text"]!
+            let userName = messageAPIDictionary["user_name"]!
+            return Message(text: messageText, userName: userName)
+        })
+        
+        return messages
+    }
+    
+    func getMessages() {
+        let session = NSURLSession.sharedSession()
+        
+        let request = NSMutableURLRequest()
+        request.HTTPMethod = "GET"
+        request.URL = NSURL(string: "http://tradecraftmessagehub.com/sample/schweetchannel")
+        
+        let task = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) in
+            if let error = error {
+                self.alertWithError(error)
+            } else if let messages = self.messagesFromNetworkResponseData(data) {
+                self.messages = messages
+                self.tableView.reloadData()
+            }
+        })
+        
+        task.resume()
+    }
 }
 
