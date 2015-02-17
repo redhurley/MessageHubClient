@@ -11,11 +11,18 @@ import UIKit
 class AskQuestionViewController: UIViewController {
 
     @IBOutlet weak var questionTextField: UITextField!
+    @IBOutlet weak var submitButton: UIButton!
+    
+    var channel = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        submitButton.setTitle("Post to \(channel) Wall", forState: UIControlState.Normal)
+        
+        println("channel is \(channel)")
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,9 +35,30 @@ class AskQuestionViewController: UIViewController {
         
         
         
-        
+        postMessage()
         
     }
+    
+    // MARK: - Networking
+    
+    func alertWithError(error : NSError) {
+        let alertController = UIAlertController(
+            title: "Error",
+            message: error.description,
+            preferredStyle: UIAlertControllerStyle.Alert
+        )
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
+
+    
+    func postMessage() {
+        let session = NSURLSession.sharedSession()
+        
+        let request = NSMutableURLRequest()
+        request.HTTPMethod = "POST"
+        request.URL = NSURL(string: "http://tradecraftmessagehub.com/sample/\(channel)")
+    }
+    
     /*
     // MARK: - Navigation
 

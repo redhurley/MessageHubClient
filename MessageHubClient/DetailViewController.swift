@@ -69,6 +69,21 @@ class DetailViewController: UITableViewController {
         }
     }
     
+    // MARK: - Segues
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "askQuestion" {
+            
+            var questionVC = segue.destinationViewController as AskQuestionViewController
+            
+            // TODO: Hand off data to the AskQuestionViewController
+            questionVC.channel = self.channel
+            
+            println("detailVC channel is \(channel)")
+        }
+    }
+    
     // MARK: - Networking
     
     func alertWithError(error : NSError) {

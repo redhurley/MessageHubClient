@@ -105,7 +105,7 @@
                     <navigationItem key="navigationItem" title="Ignorance" id="nxC-jr-7Fr">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="5Nc-9I-0MO">
                             <connections>
-                                <segue destination="A7H-sG-OHJ" kind="modal" id="mtc-R0-m5W"/>
+                                <segue destination="A7H-sG-OHJ" kind="modal" identifier="askQuestion" id="mtc-R0-m5W"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -138,7 +138,7 @@
                                     <constraint firstAttribute="height" constant="44" id="mmZ-Ho-iS1"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
-                                <state key="normal" title="Post to Wall">
+                                <state key="normal" title="Post to Channel Wall">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -181,6 +181,7 @@
                     <navigationItem key="navigationItem" title="Add Question" id="Bnd-r4-498"/>
                     <connections>
                         <outlet property="questionTextField" destination="FOq-p0-2wb" id="J4E-23-lIZ"/>
+                        <outlet property="submitButton" destination="HyK-XA-RLu" id="W9M-uh-fAn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="296-T4-NfQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
