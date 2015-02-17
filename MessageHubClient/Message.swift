@@ -9,10 +9,12 @@
 import UIKit
 
 class Message: NSObject {
+    let channel : String
     let text : String
     let userName : String
     
-    init(text : String, userName : String) {
+    init(channel: String, text : String, userName : String) {
+        self.channel = channel
         self.text = text
         self.userName = userName
     }

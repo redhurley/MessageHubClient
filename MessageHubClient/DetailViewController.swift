@@ -11,13 +11,16 @@ import UIKit
 class DetailViewController: UITableViewController {
     
     var messages = [
-        Message(text: "hello world!", userName: "donnie"),
-        Message(text: "hi this is a really long string that will likely go on two lines as long as I can get Xcode to respond properly by setting proper constraints.", userName: "nicki"),
-        Message(text: "i rule", userName: "george"),
+        Message(channel: "Engineering", text: "hello world!", userName: "donnie"),
+        Message(channel: "Growth", text: "hi this is a really long string that will likely go on two lines as long as I can get Xcode to respond properly by setting proper constraints.", userName: "nicki"),
+        Message(channel: "Sales/BD", text: "i rule", userName: "george"),
     ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
+        self.navigationItem.rightBarButtonItem = addButton
         
         getMessages()
     }
@@ -36,9 +39,30 @@ class DetailViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as MessageTableViewCell
         
         let message = self.messages[indexPath.row]
-        cell.messageLabel.text = "<\(message.userName)> \(message.text)"
+        cell.messageLabel.text = "\(message.text)"
         return cell
     }
+    
+    //    func insertNewObject(sender: AnyObject) {
+    //        objects.insertObject(NSDate(), atIndex: 0)
+    //        let indexPath = NSIndexPath(forRow: 0, inSection: 0)
+    //        self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+    //    }
+    
+    //    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    //        // Return false if you do not want the specified item to be editable.
+    //        return true
+    //    }
+    
+    //    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    //        if editingStyle == .Delete {
+    //            objects.removeObjectAtIndex(indexPath.row)
+    //            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+    //        } else if editingStyle == .Insert {
+    //            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+    //        }
+    //    }
+    
     
     // TODO: delete message from 'messages' object
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -73,9 +97,10 @@ class DetailViewController: UITableViewController {
         }
         
         var messages = messageAPIDictionaries.map({ (messageAPIDictionary) -> Message in
+            let channel = messageAPIDictionary["channel_token"]!
             let messageText = messageAPIDictionary["message_text"]!
             let userName = messageAPIDictionary["user_name"]!
-            return Message(text: messageText, userName: userName)
+            return Message(channel: channel, text: messageText, userName: userName)
         })
         
         return messages

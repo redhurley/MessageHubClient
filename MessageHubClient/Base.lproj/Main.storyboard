@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rS3-R9-Ivy">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="rS3-R9-Ivy">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -18,14 +18,14 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eq9-QA-ai8" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-148" y="64"/>
+            <point key="canvasLocation" x="-78.933333333333337" y="60.586666666666666"/>
         </scene>
         <!--Master-->
         <scene sceneID="VgW-fR-Quf">
             <objects>
                 <tableViewController title="Master" id="pGg-6v-bdr" customClass="MasterViewController" customModule="MessageHubClient" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="mLL-gJ-YKr">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -47,7 +47,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="uOI-pU-l99" kind="show" id="wRP-SY-fNX"/>
+                                    <segue destination="uOI-pU-l99" kind="push" id="wRP-SY-fNX"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -57,18 +57,18 @@
                             <outlet property="delegate" destination="pGg-6v-bdr" id="Y6K-Cp-Qkv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Master" id="tQt-TN-PWz"/>
+                    <navigationItem key="navigationItem" title="Walls" id="tQt-TN-PWz"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Cn-md-YlS" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="605" y="64"/>
+            <point key="canvasLocation" x="322.66666666666669" y="60.586666666666666"/>
         </scene>
-        <!--Messages-->
+        <!--Ignorance-->
         <scene sceneID="1hg-Hr-Mct">
             <objects>
                 <tableViewController id="uOI-pU-l99" customClass="DetailViewController" customModule="MessageHubClient" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Zni-61-Ha1">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -78,7 +78,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ED4-1n-eq1">
-                                            <rect key="frame" x="8" y="11" width="584" height="21"/>
+                                            <rect key="frame" x="8" y="11" width="304" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -88,7 +88,7 @@
                                         <constraint firstItem="ED4-1n-eq1" firstAttribute="leading" secondItem="Q4m-gH-pEw" secondAttribute="leadingMargin" id="Xyt-6Z-Fr9"/>
                                         <constraint firstItem="ED4-1n-eq1" firstAttribute="top" secondItem="Q4m-gH-pEw" secondAttribute="topMargin" constant="3" id="YCf-1o-8Ai"/>
                                         <constraint firstItem="ED4-1n-eq1" firstAttribute="centerY" secondItem="Q4m-gH-pEw" secondAttribute="centerY" id="b4B-Cp-cdH"/>
-                                        <constraint firstItem="ED4-1n-eq1" firstAttribute="trailing" secondItem="Q4m-gH-pEw" secondAttribute="trailingMargin" id="sA0-xS-8R1"/>
+                                        <constraint firstItem="ED4-1n-eq1" firstAttribute="trailing" secondItem="Q4m-gH-pEw" secondAttribute="trailingMargin" id="gX4-jJ-f4N"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -102,11 +102,16 @@
                             <outlet property="delegate" destination="uOI-pU-l99" id="c3i-ni-NVy"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Messages" id="nxC-jr-7Fr"/>
+                    <navigationItem key="navigationItem" title="Ignorance" id="nxC-jr-7Fr"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lyy-LG-Gge" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1388" y="64"/>
+            <point key="canvasLocation" x="740" y="60"/>
         </scene>
     </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
 </document>
