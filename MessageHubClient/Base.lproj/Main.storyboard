@@ -102,11 +102,87 @@
                             <outlet property="delegate" destination="uOI-pU-l99" id="c3i-ni-NVy"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Ignorance" id="nxC-jr-7Fr"/>
+                    <navigationItem key="navigationItem" title="Ignorance" id="nxC-jr-7Fr">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="5Nc-9I-0MO">
+                            <connections>
+                                <segue destination="A7H-sG-OHJ" kind="modal" id="mtc-R0-m5W"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lyy-LG-Gge" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="740" y="60"/>
+        </scene>
+        <!--Add Question-->
+        <scene sceneID="Lxr-fl-b4q">
+            <objects>
+                <viewController id="A7H-sG-OHJ" customClass="AskQuestionViewController" customModule="MessageHubClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FYh-fJ-Ptf"/>
+                        <viewControllerLayoutGuide type="bottom" id="Eie-iX-Cef"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8zX-Px-UvB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FOq-p0-2wb">
+                                <rect key="frame" x="16" y="153.5" width="288" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HyK-XA-RLu">
+                                <rect key="frame" x="16" y="210.5" width="288" height="44"/>
+                                <color key="backgroundColor" red="0.35294117650000001" green="0.73333333329999995" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="mmZ-Ho-iS1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="Post to Wall">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="askQuestion:" destination="A7H-sG-OHJ" eventType="touchUpInside" id="F3e-aB-VwN"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's Your Question?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cbv-QT-BoW">
+                                <rect key="frame" x="16" y="102" width="288" height="28.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AEg-Mv-c8B">
+                                <rect key="frame" x="122.5" y="276.5" width="75" height="30"/>
+                                <state key="normal" title="Nevermind">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="EqP-UQ-hRR" kind="unwind" unwindAction="unwindToThisViewController:" id="fFC-Dd-nC5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="AEg-Mv-c8B" secondAttribute="centerX" id="93q-Gl-BgO"/>
+                            <constraint firstItem="FOq-p0-2wb" firstAttribute="trailing" secondItem="HyK-XA-RLu" secondAttribute="trailing" id="HnL-8O-SZJ"/>
+                            <constraint firstItem="FOq-p0-2wb" firstAttribute="trailing" secondItem="8zX-Px-UvB" secondAttribute="trailingMargin" id="No1-th-JKy"/>
+                            <constraint firstItem="FOq-p0-2wb" firstAttribute="leading" secondItem="8zX-Px-UvB" secondAttribute="leadingMargin" id="Q9l-IF-5wr"/>
+                            <constraint firstItem="Cbv-QT-BoW" firstAttribute="trailing" secondItem="8zX-Px-UvB" secondAttribute="trailingMargin" id="SrH-UE-hFC"/>
+                            <constraint firstItem="FOq-p0-2wb" firstAttribute="top" secondItem="Cbv-QT-BoW" secondAttribute="bottom" constant="23" id="cZ6-Ku-nwJ"/>
+                            <constraint firstItem="Cbv-QT-BoW" firstAttribute="leading" secondItem="8zX-Px-UvB" secondAttribute="leadingMargin" id="ivV-JP-lCl"/>
+                            <constraint firstItem="Cbv-QT-BoW" firstAttribute="top" secondItem="FYh-fJ-Ptf" secondAttribute="bottom" constant="82" id="kXE-X0-Doi"/>
+                            <constraint firstItem="FOq-p0-2wb" firstAttribute="leading" secondItem="HyK-XA-RLu" secondAttribute="leading" id="sLk-tO-0pw"/>
+                            <constraint firstItem="AEg-Mv-c8B" firstAttribute="top" secondItem="HyK-XA-RLu" secondAttribute="bottom" constant="22" id="vPy-0x-Yvs"/>
+                            <constraint firstItem="HyK-XA-RLu" firstAttribute="top" secondItem="FOq-p0-2wb" secondAttribute="bottom" constant="27" id="yKr-rR-Dex"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Question" id="Bnd-r4-498"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="296-T4-NfQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="EqP-UQ-hRR" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1137" y="60"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

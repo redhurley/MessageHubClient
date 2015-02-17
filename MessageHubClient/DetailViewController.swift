@@ -15,12 +15,14 @@ class DetailViewController: UITableViewController {
         Message(channel: "Growth", text: "hi this is a really long string that will likely go on two lines as long as I can get Xcode to respond properly by setting proper constraints.", userName: "nicki"),
         Message(channel: "Sales/BD", text: "i rule", userName: "george"),
     ]
+    
+    var messageVC = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
-        self.navigationItem.rightBarButtonItem = addButton
+//        let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
+//        self.navigationItem.rightBarButtonItem = addButton
         
         getMessages()
     }
@@ -123,6 +125,10 @@ class DetailViewController: UITableViewController {
         })
         
         task.resume()
+    }
+    
+    @IBAction func unwindToThisViewController(segue: UIStoryboardSegue) {
+        
     }
 }
 

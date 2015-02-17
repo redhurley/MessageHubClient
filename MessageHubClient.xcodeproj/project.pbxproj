@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F89648101A93C19A002B4781 /* AskQuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F896480F1A93C19A002B4781 /* AskQuestionViewController.swift */; };
 		F8D3BE341A8BE3E400C9F26C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D3BE331A8BE3E400C9F26C /* AppDelegate.swift */; };
 		F8D3BE361A8BE3E400C9F26C /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D3BE351A8BE3E400C9F26C /* MasterViewController.swift */; };
 		F8D3BE381A8BE3E400C9F26C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D3BE371A8BE3E400C9F26C /* DetailViewController.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F896480F1A93C19A002B4781 /* AskQuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AskQuestionViewController.swift; sourceTree = "<group>"; };
 		F8D3BE2E1A8BE3E300C9F26C /* MessageHubClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MessageHubClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8D3BE321A8BE3E300C9F26C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8D3BE331A8BE3E400C9F26C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 				F8D3BE351A8BE3E400C9F26C /* MasterViewController.swift */,
 				F8D3BE371A8BE3E400C9F26C /* DetailViewController.swift */,
 				F8D3BEBD1A8E83C600C9F26C /* Message.swift */,
+				F896480F1A93C19A002B4781 /* AskQuestionViewController.swift */,
 				F8D3BE391A8BE3E400C9F26C /* Main.storyboard */,
 				F8D3BEBF1A8EAF4F00C9F26C /* MessageTableViewCell.swift */,
 				F8D3BE3C1A8BE3E400C9F26C /* Images.xcassets */,
@@ -223,6 +226,7 @@
 			files = (
 				F8D3BE381A8BE3E400C9F26C /* DetailViewController.swift in Sources */,
 				F8D3BEBE1A8E83C600C9F26C /* Message.swift in Sources */,
+				F89648101A93C19A002B4781 /* AskQuestionViewController.swift in Sources */,
 				F8D3BE361A8BE3E400C9F26C /* MasterViewController.swift in Sources */,
 				F8D3BEC01A8EAF4F00C9F26C /* MessageTableViewCell.swift in Sources */,
 				F8D3BE341A8BE3E400C9F26C /* AppDelegate.swift in Sources */,
