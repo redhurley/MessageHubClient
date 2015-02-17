@@ -12,7 +12,7 @@ class MasterViewController: UITableViewController {
 
     let channels = [    "Engineering",
                         "Growth",
-                        "Sales/BD",
+                        "Sales-BD",
                         "UX",
                         "Tradecraft"
     ]
@@ -36,11 +36,13 @@ class MasterViewController: UITableViewController {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-//        var messageVC = channels[indexPath.row]
-        
         if segue.identifier == "showDetail" {
+            
+            var messageVC = segue.destinationViewController as DetailViewController
+
             if let indexPath = self.tableView.indexPathForSelectedRow() {
                 // TODO: Hand off data to the DetailViewController
+                messageVC.channel = channels[indexPath.row]
             }
         }
     }

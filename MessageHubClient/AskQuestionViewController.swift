@@ -10,6 +10,8 @@ import UIKit
 
 class AskQuestionViewController: UIViewController {
 
+    @IBOutlet weak var questionTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,6 +25,10 @@ class AskQuestionViewController: UIViewController {
 
     @IBAction func askQuestion(sender: AnyObject) {
         // TODO: post question to database and add to DetailVC
+        
+        
+        
+        
         
     }
     /*

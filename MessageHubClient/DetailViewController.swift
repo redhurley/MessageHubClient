@@ -11,19 +11,14 @@ import UIKit
 class DetailViewController: UITableViewController {
     
     var messages = [
-        Message(channel: "Engineering", text: "hello world!", userName: "donnie"),
-        Message(channel: "Growth", text: "hi this is a really long string that will likely go on two lines as long as I can get Xcode to respond properly by setting proper constraints.", userName: "nicki"),
-        Message(channel: "Sales/BD", text: "i rule", userName: "george"),
+        Message(channel: "", text: ""),
     ]
-    
-    var messageVC = ""
+
+    var channel = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
-//        self.navigationItem.rightBarButtonItem = addButton
-        
+                
         getMessages()
     }
     
@@ -101,8 +96,7 @@ class DetailViewController: UITableViewController {
         var messages = messageAPIDictionaries.map({ (messageAPIDictionary) -> Message in
             let channel = messageAPIDictionary["channel_token"]!
             let messageText = messageAPIDictionary["message_text"]!
-            let userName = messageAPIDictionary["user_name"]!
-            return Message(channel: channel, text: messageText, userName: userName)
+            return Message(channel: channel, text: messageText)
         })
         
         return messages
@@ -113,14 +107,16 @@ class DetailViewController: UITableViewController {
         
         let request = NSMutableURLRequest()
         request.HTTPMethod = "GET"
-        request.URL = NSURL(string: "http://tradecraftmessagehub.com/sample/schweetchannel")
+        request.URL = NSURL(string: "http://tradecraftmessagehub.com/sample/\(channel)")
         
         let task = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) in
-            if let error = error {
-                self.alertWithError(error)
-            } else if let messages = self.messagesFromNetworkResponseData(data) {
-                self.messages = messages
-                self.tableView.reloadData()
+            NSOperationQueue.mainQueue().addOperationWithBlock { () -> Void in
+                if let error = error {
+                    self.alertWithError(error)
+                } else if let messages = self.messagesFromNetworkResponseData(data) {
+                    self.messages = messages
+                    self.tableView.reloadData()
+                }
             }
         })
         

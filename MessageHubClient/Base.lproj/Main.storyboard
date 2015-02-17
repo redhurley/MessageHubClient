@@ -47,7 +47,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="uOI-pU-l99" kind="push" id="wRP-SY-fNX"/>
+                                    <segue destination="uOI-pU-l99" kind="push" identifier="showDetail" id="wRP-SY-fNX"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -127,12 +127,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FOq-p0-2wb">
-                                <rect key="frame" x="16" y="153.5" width="288" height="30"/>
+                                <rect key="frame" x="16" y="169" width="288" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HyK-XA-RLu">
-                                <rect key="frame" x="16" y="210.5" width="288" height="44"/>
+                                <rect key="frame" x="16" y="229" width="288" height="44"/>
                                 <color key="backgroundColor" red="0.35294117650000001" green="0.73333333329999995" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="mmZ-Ho-iS1"/>
@@ -147,13 +147,14 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's Your Question?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cbv-QT-BoW">
-                                <rect key="frame" x="16" y="102" width="288" height="28.5"/>
+                                <rect key="frame" x="16" y="110.5" width="288" height="28.5"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="24"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AEg-Mv-c8B">
-                                <rect key="frame" x="122.5" y="276.5" width="75" height="30"/>
+                                <rect key="frame" x="125" y="293" width="70" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                 <state key="normal" title="Nevermind">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -169,15 +170,18 @@
                             <constraint firstItem="FOq-p0-2wb" firstAttribute="trailing" secondItem="8zX-Px-UvB" secondAttribute="trailingMargin" id="No1-th-JKy"/>
                             <constraint firstItem="FOq-p0-2wb" firstAttribute="leading" secondItem="8zX-Px-UvB" secondAttribute="leadingMargin" id="Q9l-IF-5wr"/>
                             <constraint firstItem="Cbv-QT-BoW" firstAttribute="trailing" secondItem="8zX-Px-UvB" secondAttribute="trailingMargin" id="SrH-UE-hFC"/>
-                            <constraint firstItem="FOq-p0-2wb" firstAttribute="top" secondItem="Cbv-QT-BoW" secondAttribute="bottom" constant="23" id="cZ6-Ku-nwJ"/>
+                            <constraint firstItem="FOq-p0-2wb" firstAttribute="top" secondItem="Cbv-QT-BoW" secondAttribute="bottom" constant="30" id="cZ6-Ku-nwJ"/>
                             <constraint firstItem="Cbv-QT-BoW" firstAttribute="leading" secondItem="8zX-Px-UvB" secondAttribute="leadingMargin" id="ivV-JP-lCl"/>
-                            <constraint firstItem="Cbv-QT-BoW" firstAttribute="top" secondItem="FYh-fJ-Ptf" secondAttribute="bottom" constant="82" id="kXE-X0-Doi"/>
                             <constraint firstItem="FOq-p0-2wb" firstAttribute="leading" secondItem="HyK-XA-RLu" secondAttribute="leading" id="sLk-tO-0pw"/>
-                            <constraint firstItem="AEg-Mv-c8B" firstAttribute="top" secondItem="HyK-XA-RLu" secondAttribute="bottom" constant="22" id="vPy-0x-Yvs"/>
-                            <constraint firstItem="HyK-XA-RLu" firstAttribute="top" secondItem="FOq-p0-2wb" secondAttribute="bottom" constant="27" id="yKr-rR-Dex"/>
+                            <constraint firstAttribute="centerY" secondItem="FOq-p0-2wb" secondAttribute="centerY" constant="100" id="ucd-ZP-5wW"/>
+                            <constraint firstItem="AEg-Mv-c8B" firstAttribute="top" secondItem="HyK-XA-RLu" secondAttribute="bottom" constant="20" id="vPy-0x-Yvs"/>
+                            <constraint firstItem="HyK-XA-RLu" firstAttribute="top" secondItem="FOq-p0-2wb" secondAttribute="bottom" constant="30" id="yKr-rR-Dex"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Question" id="Bnd-r4-498"/>
+                    <connections>
+                        <outlet property="questionTextField" destination="FOq-p0-2wb" id="J4E-23-lIZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="296-T4-NfQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="EqP-UQ-hRR" userLabel="Exit" sceneMemberID="exit"/>
