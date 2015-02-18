@@ -39,7 +39,7 @@
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2pz-XF-uhl">
                                             <rect key="frame" x="15" y="0.0" width="270" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
@@ -78,17 +78,17 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ED4-1n-eq1">
-                                            <rect key="frame" x="8" y="11" width="304" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <rect key="frame" x="18" y="11" width="304" height="21"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="ED4-1n-eq1" firstAttribute="leading" secondItem="Q4m-gH-pEw" secondAttribute="leadingMargin" id="Xyt-6Z-Fr9"/>
+                                        <constraint firstItem="ED4-1n-eq1" firstAttribute="leading" secondItem="Q4m-gH-pEw" secondAttribute="leadingMargin" constant="10" id="Xyt-6Z-Fr9"/>
                                         <constraint firstItem="ED4-1n-eq1" firstAttribute="top" secondItem="Q4m-gH-pEw" secondAttribute="topMargin" constant="3" id="YCf-1o-8Ai"/>
                                         <constraint firstItem="ED4-1n-eq1" firstAttribute="centerY" secondItem="Q4m-gH-pEw" secondAttribute="centerY" id="b4B-Cp-cdH"/>
-                                        <constraint firstItem="ED4-1n-eq1" firstAttribute="trailing" secondItem="Q4m-gH-pEw" secondAttribute="trailingMargin" id="gX4-jJ-f4N"/>
+                                        <constraint firstItem="ED4-1n-eq1" firstAttribute="trailing" secondItem="Q4m-gH-pEw" secondAttribute="trailingMargin" constant="10" id="gX4-jJ-f4N"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
