@@ -79,8 +79,6 @@ class DetailViewController: UITableViewController {
             
             // TODO: Hand off data to the AskQuestionViewController
             questionVC.channel = self.channel
-            
-            println("detailVC channel is \(channel)")
         }
     }
     
