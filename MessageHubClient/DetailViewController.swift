@@ -18,6 +18,8 @@ class DetailViewController: UITableViewController, AskQuestionViewControllerDele
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // remove tableView separator lines
         self.tableView.tableFooterView = UIView()
                 
         getMessages()
@@ -35,20 +37,10 @@ class DetailViewController: UITableViewController, AskQuestionViewControllerDele
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as MessageTableViewCell
-        
-        cell.selectionStyle = UITableViewCellSelectionStyle.None
-        
+                
         let message = self.messages[messages.count - (indexPath.row + 1)]
-        cell.messageLabel.text = "\(message.text)"
+        cell.messageLabel.text = message.text
         return cell
-    }
-    
-    // TODO: delete message from 'messages' object
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if (editingStyle == UITableViewCellEditingStyle.Delete) {
-            messages.removeAtIndex(indexPath.row)
-            tableView.reloadData()
-        }
     }
     
     // MARK: - Segues
@@ -121,11 +113,11 @@ class DetailViewController: UITableViewController, AskQuestionViewControllerDele
         task.resume()
     }
     
-    func AskQuestionViewControllerDidCreateMessageText(channel: String, messageText: String) {
-        // TODO: take string from AskQuestionVC textView and add it to end of messages array
+    func askQuestionViewControllerDidCreateMessageText(channel: String, messageText: String) {
+        // take string from AskQuestionVC textView and add it to end of messages array
         let newMessage = Message(channel: channel, text: messageText)
         self.messages.append(newMessage)
-        // TODO: update tableView
+        // update tableView
         tableView.reloadData()
     }
     

@@ -36,9 +36,8 @@ class AskQuestionViewController: UIViewController {
         // TODO: post question to server and add to DetailVC
         postMessage()
         
-    self.delegate?.AskQuestionViewControllerDidCreateMessageText(channel, messageText: self.questionTextField.text)
+    self.delegate?.askQuestionViewControllerDidCreateMessageText(channel, messageText: self.questionTextField.text)
         self.dismissViewControllerAnimated(true, completion: nil)
-    
     }
     
     // MARK: - Networking
@@ -59,7 +58,7 @@ class AskQuestionViewController: UIViewController {
         request.HTTPMethod = "POST"
         request.URL = NSURL(string: "http://tradecraftmessagehub.com/sample/\(channel)")
         
-        var params = ["user_name":"", "message_text":"\(questionTextField.text)"] as Dictionary<String, String>
+        var params = ["user_name":"", "message_text": questionTextField.text] as Dictionary<String, String>
         
         var err: NSError?
         request.HTTPBody = NSJSONSerialization.dataWithJSONObject(params, options: nil, error: &err)
@@ -71,7 +70,7 @@ class AskQuestionViewController: UIViewController {
             var strData = NSString(data: data, encoding: NSUTF8StringEncoding)
             println("Body: \(strData)")
             var err: NSError?
-            var json = NSJSONSerialization.JSONObjectWithData(data, options: .MutableLeaves, error: &err) as? NSDictionary
+            var json = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &err) as? NSDictionary
             
             // Did the JSONObjectWithData constructor return an error? If so, log the error to the console
             if(err != nil) {
@@ -102,5 +101,5 @@ class AskQuestionViewController: UIViewController {
 
 protocol AskQuestionViewControllerDelegate: NSObjectProtocol {
     
-    func AskQuestionViewControllerDidCreateMessageText(channel: String, messageText: String)
+    func askQuestionViewControllerDidCreateMessageText(channel: String, messageText: String)
 }
