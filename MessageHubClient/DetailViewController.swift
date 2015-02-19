@@ -38,31 +38,10 @@ class DetailViewController: UITableViewController, AskQuestionViewControllerDele
         
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         
-        let message = self.messages[indexPath.row]
+        let message = self.messages[messages.count - (indexPath.row + 1)]
         cell.messageLabel.text = "\(message.text)"
         return cell
     }
-    
-    //    func insertNewObject(sender: AnyObject) {
-    //        objects.insertObject(NSDate(), atIndex: 0)
-    //        let indexPath = NSIndexPath(forRow: 0, inSection: 0)
-    //        self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-    //    }
-    
-    //    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-    //        // Return false if you do not want the specified item to be editable.
-    //        return true
-    //    }
-    
-    //    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-    //        if editingStyle == .Delete {
-    //            objects.removeObjectAtIndex(indexPath.row)
-    //            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-    //        } else if editingStyle == .Insert {
-    //            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-    //        }
-    //    }
-    
     
     // TODO: delete message from 'messages' object
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
@@ -145,10 +124,9 @@ class DetailViewController: UITableViewController, AskQuestionViewControllerDele
     func AskQuestionViewControllerDidCreateMessageText(channel: String, messageText: String) {
         // TODO: take string from AskQuestionVC textView and add it to end of messages array
         let newMessage = Message(channel: channel, text: messageText)
-        self.messages.insert(newMessage, atIndex: 0)
+        self.messages.append(newMessage)
         // TODO: update tableView
         tableView.reloadData()
-        
     }
     
     @IBAction func unwindToThisViewController(segue: UIStoryboardSegue) {

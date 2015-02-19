@@ -14,7 +14,12 @@ class MasterViewController: UITableViewController {
                     "Growth",
                     "Sales-BD",
                     "UX",
-                    "Tradecraft"
+                    "Tradecraft",
+                    "test6",
+                    "test7",
+                    "test8",
+                    "test9",
+                    "test10"
     ]
 
 
@@ -73,9 +78,38 @@ class MasterViewController: UITableViewController {
             cell.backgroundColor = UIColor(red: 15/255, green: 191/255, blue: 167/255, alpha: 1.0)
         } else if indexPath.row == 4 {
             cell.backgroundColor = UIColor(red: 0/255, green: 124/255, blue: 74/255, alpha: 1.0)
+        } else if indexPath.row == 5 {
+            cell.backgroundColor = UIColor(red: 0/255, green: 124/255, blue: 74/255, alpha: 1.0)
+        } else if indexPath.row == 6 {
+            cell.backgroundColor = UIColor(red: 0/255, green: 124/255, blue: 74/255, alpha: 1.0)
+        } else if indexPath.row == 7 {
+            cell.backgroundColor = UIColor(red: 0/255, green: 124/255, blue: 74/255, alpha: 1.0)
+        } else if indexPath.row == 8 {
+            cell.backgroundColor = UIColor(red: 0/255, green: 124/255, blue: 74/255, alpha: 1.0)
+        } else if indexPath.row == 9 {
+            cell.backgroundColor = UIColor(red: 0/255, green: 124/255, blue: 74/255, alpha: 1.0)
         }
         
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        let screenSize: CGRect = UIScreen.mainScreen().bounds
+        let screenWidth = screenSize.width
+        let screenHeight = screenSize.height
+        
+        var rowHeight: CGFloat = 0
+        
+        if channels.count > 4 && channels.count < 8 {
+            rowHeight = (screenHeight - 44) / CGFloat(channels.count)
+            tableView.rowHeight = rowHeight
+        } else  {
+            rowHeight = tableView.estimatedRowHeight
+            tableView.rowHeight = UITableViewAutomaticDimension
+            tableView.estimatedRowHeight = 80.0
+        }
+        return rowHeight
+        
     }
 }
 
