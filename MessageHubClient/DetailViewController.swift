@@ -145,7 +145,7 @@ class DetailViewController: UITableViewController, AskQuestionViewControllerDele
     func AskQuestionViewControllerDidCreateMessageText(channel: String, messageText: String) {
         // TODO: take string from AskQuestionVC textView and add it to end of messages array
         let newMessage = Message(channel: channel, text: messageText)
-        self.messages.append(newMessage)
+        self.messages.insert(newMessage, atIndex: 0)
         // TODO: update tableView
         tableView.reloadData()
         
