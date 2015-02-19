@@ -9,6 +9,8 @@
 import UIKit
 
 class AskQuestionViewController: UIViewController {
+    
+    var delegate : AskQuestionViewControllerDelegate?
 
     @IBOutlet weak var questionTextField: UITextField!
     @IBOutlet weak var submitButton: UIButton!
@@ -17,6 +19,8 @@ class AskQuestionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.questionTextField.becomeFirstResponder()
 
         // Do any additional setup after loading the view.
         
@@ -30,9 +34,10 @@ class AskQuestionViewController: UIViewController {
 
     @IBAction func askQuestion(sender: AnyObject) {
         // TODO: post question to server and add to DetailVC
-        
-        
         postMessage()
+        
+    self.delegate?.AskQuestionViewControllerDidCreateMessageText(channel, messageText: self.questionTextField.text)
+        self.dismissViewControllerAnimated(true, completion: nil)
     
     }
     
@@ -46,28 +51,6 @@ class AskQuestionViewController: UIViewController {
         )
         self.presentViewController(alertController, animated: true, completion: nil)
     }
-    
-//    func messagesFromNetworkResponseData(responseData : NSData) -> Array<Message>? {
-//        var serializationError : NSError?
-//        let messageAPIDictionaries = NSJSONSerialization.JSONObjectWithData(
-//            responseData,
-//            options: nil,
-//            error: &serializationError
-//            ) as Array<Dictionary<String, String>>
-//        
-//        if let serializationError = serializationError {
-//            alertWithError(serializationError)
-//            return nil
-//        }
-//        
-//        var messages = messageAPIDictionaries.map({ (messageAPIDictionary) -> Message in
-//            let channel = messageAPIDictionary["channel_token"]!
-//            let messageText = messageAPIDictionary["message_text"]!
-//            return Message(channel: channel, text: messageText)
-//        })
-//        
-//        return messages
-//    }
 
     func postMessage() {
         let session = NSURLSession.sharedSession()
@@ -112,29 +95,12 @@ class AskQuestionViewController: UIViewController {
                 }
             }
         })
-
-        
-//        let task = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) in
-//            NSOperationQueue.mainQueue().addOperationWithBlock { () -> Void in
-//                if let error = error {
-//                    self.alertWithError(error)
-//                } else {
-//                    self.dismissViewControllerAnimated(true, completion: nil)
-//                }
-//            }
-//        })
         
         task.resume()
     }
+}
+
+protocol AskQuestionViewControllerDelegate: NSObjectProtocol {
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    func AskQuestionViewControllerDidCreateMessageText(channel: String, messageText: String)
 }

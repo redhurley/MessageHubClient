@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailViewController: UITableViewController {
+class DetailViewController: UITableViewController, AskQuestionViewControllerDelegate {
     
     var messages = [
         Message(channel: "", text: ""),
@@ -35,6 +35,8 @@ class DetailViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as MessageTableViewCell
+        
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
         
         let message = self.messages[indexPath.row]
         cell.messageLabel.text = "\(message.text)"
@@ -80,6 +82,9 @@ class DetailViewController: UITableViewController {
             
             // TODO: Hand off data to the AskQuestionViewController
             questionVC.channel = self.channel
+            
+            // TODO: set as delegate
+            questionVC.delegate = self
         }
     }
     
@@ -135,6 +140,15 @@ class DetailViewController: UITableViewController {
         })
         
         task.resume()
+    }
+    
+    func AskQuestionViewControllerDidCreateMessageText(channel: String, messageText: String) {
+        // TODO: take string from AskQuestionVC textView and add it to end of messages array
+        let newMessage = Message(channel: channel, text: messageText)
+        self.messages.append(newMessage)
+        // TODO: update tableView
+        tableView.reloadData()
+        
     }
     
     @IBAction func unwindToThisViewController(segue: UIStoryboardSegue) {
