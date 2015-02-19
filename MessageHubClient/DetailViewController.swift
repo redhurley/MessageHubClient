@@ -80,10 +80,10 @@ class DetailViewController: UITableViewController, AskQuestionViewControllerDele
             
             var questionVC = segue.destinationViewController as AskQuestionViewController
             
-            // TODO: Hand off data to the AskQuestionViewController
+            // Hand off data to the AskQuestionViewController
             questionVC.channel = self.channel
             
-            // TODO: set as delegate
+            // set as delegate
             questionVC.delegate = self
         }
     }
