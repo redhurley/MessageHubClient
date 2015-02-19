@@ -17,7 +17,7 @@
                BlueprintIdentifier = "F8D3BE2D1A8BE3E300C9F26C"
                BuildableName = "MessageHubClient.app"
                BlueprintName = "MessageHubClient"
-               ReferencedContainer = "container:MessageHubClient.xcodeproj">
+               ReferencedContainer = "container:Wall of Ignorance.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -31,7 +31,7 @@
                BlueprintIdentifier = "F8D3BE441A8BE3E400C9F26C"
                BuildableName = "MessageHubClientTests.xctest"
                BlueprintName = "MessageHubClientTests"
-               ReferencedContainer = "container:MessageHubClient.xcodeproj">
+               ReferencedContainer = "container:Wall of Ignorance.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -49,7 +49,7 @@
                BlueprintIdentifier = "F8D3BE441A8BE3E400C9F26C"
                BuildableName = "MessageHubClientTests.xctest"
                BlueprintName = "MessageHubClientTests"
-               ReferencedContainer = "container:MessageHubClient.xcodeproj">
+               ReferencedContainer = "container:Wall of Ignorance.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -59,7 +59,7 @@
             BlueprintIdentifier = "F8D3BE2D1A8BE3E300C9F26C"
             BuildableName = "MessageHubClient.app"
             BlueprintName = "MessageHubClient"
-            ReferencedContainer = "container:MessageHubClient.xcodeproj">
+            ReferencedContainer = "container:Wall of Ignorance.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -78,7 +78,7 @@
             BlueprintIdentifier = "F8D3BE2D1A8BE3E300C9F26C"
             BuildableName = "MessageHubClient.app"
             BlueprintName = "MessageHubClient"
-            ReferencedContainer = "container:MessageHubClient.xcodeproj">
+            ReferencedContainer = "container:Wall of Ignorance.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -96,7 +96,7 @@
             BlueprintIdentifier = "F8D3BE2D1A8BE3E300C9F26C"
             BuildableName = "MessageHubClient.app"
             BlueprintName = "MessageHubClient"
-            ReferencedContainer = "container:MessageHubClient.xcodeproj">
+            ReferencedContainer = "container:Wall of Ignorance.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

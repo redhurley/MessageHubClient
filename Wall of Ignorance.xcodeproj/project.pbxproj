@@ -180,7 +180,7 @@
 					};
 				};
 			};
-			buildConfigurationList = F8D3BE291A8BE3E300C9F26C /* Build configuration list for PBXProject "MessageHubClient" */;
+			buildConfigurationList = F8D3BE291A8BE3E300C9F26C /* Build configuration list for PBXProject "Wall of Ignorance" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -405,7 +405,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F8D3BE291A8BE3E300C9F26C /* Build configuration list for PBXProject "MessageHubClient" */ = {
+		F8D3BE291A8BE3E300C9F26C /* Build configuration list for PBXProject "Wall of Ignorance" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F8D3BE4D1A8BE3E400C9F26C /* Debug */,

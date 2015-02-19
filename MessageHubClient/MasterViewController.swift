@@ -10,11 +10,11 @@ import UIKit
 
 class MasterViewController: UITableViewController {
 
-    let channels = [    "Engineering",
-                        "Growth",
-                        "Sales-BD",
-                        "UX",
-                        "Tradecraft"
+    let channels = ["Engineering",
+                    "Growth",
+                    "Sales-BD",
+                    "UX",
+                    "Tradecraft"
     ]
 
 
