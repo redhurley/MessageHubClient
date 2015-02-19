@@ -71,9 +71,7 @@ class MasterViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        let screenSize: CGRect = UIScreen.mainScreen().bounds
-        let screenWidth = screenSize.width
-        let screenHeight = screenSize.height
+        let screenHeight: CGFloat = tableView.bounds.height
         
         var rowHeight: CGFloat = 0
         
