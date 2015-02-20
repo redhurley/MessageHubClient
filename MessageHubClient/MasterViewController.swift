@@ -55,16 +55,37 @@ class MasterViewController: UITableViewController {
 
         cell.textLabel!.text = channels[indexPath.row]
         
+//        let rgbByRow = [
+//            (4, 109, 139),
+//            (48, 146, 146),
+//            (47, 184, 172),
+//            (147, 164, 42),
+//            (236, 190, 19)
+//        ]
+//        
+//        func colorForRow (row: Int) -> UIColor {
+//            let rgbTuple = rgbByRow[row]
+//            return UIColor (red: rgbTuple.0/255, green: rgbTuple.1/255, blue: rgbTuple.2/255, alpha: 1.0)
+//        }
+        
+        let colorForCell = (
+            darkBlue: UIColor(red: 4/255, green: 109/255, blue: 139/255, alpha: 1.0),
+            darkTeal: UIColor(red: 48/255, green: 146/255, blue: 146/255, alpha: 1.0),
+            lightTeal: UIColor(red: 47/255, green: 184/255, blue: 172/255, alpha: 1.0),
+            green: UIColor(red: 147/255, green: 164/255, blue: 42/255, alpha: 1.0),
+            orange: UIColor(red: 236/255, green: 190/255, blue: 19/255, alpha: 1.0)
+        )
+        
         if indexPath.row == 0 {
-            cell.backgroundColor = UIColor(red: 125/255, green: 202/255, blue: 9/255, alpha: 1.0)
+            cell.backgroundColor = colorForCell.darkBlue
         } else if indexPath.row == 1 {
-            cell.backgroundColor = UIColor(red: 19/255, green: 221/255, blue: 197/255, alpha: 1.0)
+            cell.backgroundColor = colorForCell.darkTeal
         } else if indexPath.row == 2 {
-            cell.backgroundColor = UIColor(red: 29/255, green: 166/255, blue: 211/255, alpha: 1.0)
+            cell.backgroundColor = colorForCell.lightTeal
         } else if indexPath.row == 3 {
-            cell.backgroundColor = UIColor(red: 15/255, green: 191/255, blue: 167/255, alpha: 1.0)
+            cell.backgroundColor = colorForCell.green
         } else if indexPath.row == 4 {
-            cell.backgroundColor = UIColor(red: 0/255, green: 124/255, blue: 74/255, alpha: 1.0)
+            cell.backgroundColor = colorForCell.orange
         }
         
         return cell
@@ -76,7 +97,7 @@ class MasterViewController: UITableViewController {
         var rowHeight: CGFloat = 0
         
         if channels.count > 4 && channels.count < 8 {
-            rowHeight = (screenHeight - 44) / CGFloat(channels.count)
+            rowHeight = (screenHeight - 64) / CGFloat(channels.count)
             tableView.rowHeight = rowHeight
         } else  {
             rowHeight = tableView.estimatedRowHeight
